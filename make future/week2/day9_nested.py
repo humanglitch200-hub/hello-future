@@ -16,7 +16,7 @@ else:
     print("Invalid credentials")
 
 
-    
+
 
 #asking for inforamtion
 age = int(input("Enter your age: "))
@@ -29,7 +29,7 @@ ticket =[]
 if age <= 5:
     ticket = '$0'
 
-elif age > 5 < 17:
+elif 5 < age < 18:
     if day == 'yes':
         ticket = '$12'
 
@@ -37,7 +37,7 @@ elif age > 5 < 17:
         ticket = '$8'
 
 
-elif age > 18 < 64:
+elif 18 < age < 64:
     if day == 'yes':
         ticket = '$15'
 
