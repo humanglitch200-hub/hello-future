@@ -125,6 +125,7 @@ if __name__ == "__main__":
 
         elif choice == 5:
             print('see you')
+            save('contactshub.txt', contacts)
             break
 
         else:

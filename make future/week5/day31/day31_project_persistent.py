@@ -15,7 +15,7 @@ def load(filename):
 def save(filename, contacts):
     with open(filename, 'w', encoding = 'utf-8') as f:
         for c in contacts:
-            f.write(f'{c["name"]} | {c["phone"]}\n')
+           f.write(f'{c["name"]} | {c["phone"]}\n')
 
 def add(contacts, name, phone):
     contacts.append({"name": name, "phone": phone})

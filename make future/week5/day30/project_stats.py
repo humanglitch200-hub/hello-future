@@ -27,7 +27,3 @@ if __name__ == "__main__":
             print('Total lines:',result["lines"])
             print('Total Words:',result["words"])
             print('Total Characters:',result["characters"])
-    
-
-
-
