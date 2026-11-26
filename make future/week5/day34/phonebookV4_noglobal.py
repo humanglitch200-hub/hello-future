@@ -1,6 +1,5 @@
 import os
 
-
 def backup_file(filename):
     if not os.path.exists(filename):
         return
@@ -8,7 +7,6 @@ def backup_file(filename):
         content = f.read()
     with open(filename + '.bak', 'w', encoding='utf-8') as f:
         f.write(content)
-
 
 def restore_from_backup(filename):
     if not os.path.exists(filename + '.bak'):
@@ -19,7 +17,6 @@ def restore_from_backup(filename):
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(content)
     return True
-
 
 def load(contacts, filename):
     contacts.clear()
@@ -151,15 +148,18 @@ def main():
             save(contacts, "phonebook.txt")
 
         elif choice == 6:
-            mew = "phonebookV4_noglobal.py"
-            print(os.path.getsize(mew))
-            print(os.path.basename(mew))
-            with open(mew, 'r') as f:
-                lines = 0
-                for l in f:
-                    lines += 1
-            print(lines)
-    
+            try:
+                mew = "phonebookV4_noglobal.py"
+                print(os.path.getsize(mew))
+                print(os.path.basename(mew))
+                with open(mew, 'r') as f:
+                    lines = 0
+                    for l in f:
+                        lines += 1
+                print(lines)
+            except FileNotFoundError:
+                print("File not found")
+                continue
         elif choice == 7:
             print("see you.")
             break

@@ -125,7 +125,11 @@ def main():
                 print("enter index!")
                 continue
 
-            new_phone = input("New phone: ")
+            new_phone = input("New phone: ").strip()
+            if not new_phone:
+                print("invalid phone")
+                continue
+            
             edit(contacts, index, new_phone)
             print("contact edited")
             save(contacts)

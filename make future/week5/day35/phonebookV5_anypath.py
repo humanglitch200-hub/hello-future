@@ -53,7 +53,7 @@ def add(contacts, name, phone):
 def search(contacts, find):
     result = []
     for c in contacts:
-        if find.lower() in c['name'].lower() or find in c['phone']:
+        if find.lower() in c['name'].lower() or find in c['phone']:   
             result.append(c)
     return result
 
@@ -70,7 +70,7 @@ def main():
         print(f"loaded {len(contacts)} contacts.")
     else:
         print("nothing to load.\nstarting fresh.")
-
+        
     while True:
         print()
         print("1. Add")
@@ -147,14 +147,18 @@ def main():
             save(contacts, PHONEBOOK_FILE)
 
         elif choice == 6:
-            mew = "phonebookV5_anypath.py"
-            print(os.path.getsize(mew))
-            print(os.path.basename(mew))
-            with open(mew, 'r') as f:
-                lines = 0
-                for l in f:
-                    lines += 1
-            print(lines)
+            
+           mew = "phonebookV5_anypath.py"
+           if not os.path.exists(mew):
+               print(f"'{mew}' not found in {os.getcwd()}")
+               continue
+           print(os.path.getsize(mew))
+           print(os.path.basename(mew))
+           with open(mew, 'r') as f:
+               lines = 0
+               for l in f:
+                   lines += 1
+           print(lines)   
 
         elif choice == 7:
             print(f'full path: {PHONEBOOK_FILE}')

@@ -1,6 +1,6 @@
 import os, csv
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, 'python3 phonebook_v9_hardened.csv')
+DATA_FILE = os.path.join(BASE_DIR, 'phonebook_v9.csv')
 FIELDS = ['name', 'phone']
 
 
@@ -11,7 +11,7 @@ def is_valid_row(row, required_fields):
 
     for field in required_fields:
         if not row[field].strip():
-            return(False, f"")
+            return(False, f"bad feild")
 
     if None in row:
         return (False, "extra columns")
@@ -21,7 +21,7 @@ def is_duplicate(contacts, name):
     for c in contacts:
         if c['name'].lower() == name.lower():
             return True
-        return False
+    return False
 
 def clean_row(row, fields):
     clean = {}
